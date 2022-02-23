@@ -1,0 +1,19 @@
+@media (min-width: 768px) {
+	.hero {
+		&__content {
+			display: flex;
+			justify-content: center;
+
+			&--text {
+				margin-left: 1.5em;
+				transition: border-color 0.5s;
+
+				&:hover {
+					border-color: $red;
+				}
+			}
+		}
+	}
+
+	
+}

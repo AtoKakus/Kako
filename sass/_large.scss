@@ -1,0 +1,40 @@
+@media(min-width: 992px){
+
+    .hero{
+      &__content{
+          
+      
+
+          &--text{
+             font-size: 2rem;
+          }
+        }
+
+    }
+
+    .aboutus {
+
+      &__box {
+        // border: 1px solid $red;
+        display: flex;
+        justify-content: center;
+        
+      }
+
+
+      &__img{
+        // border: 1px solid $red;
+        // width: 50%;
+      }
+
+       
+      
+
+      &__skills{
+        // border: 1px solid blue;
+        width: 60%;
+        margin: 2em;
+       
+      }
+    }
+  }
