@@ -1,5 +1,6 @@
 @import "./animation";
 @import "./colors";
+@import "./mixins";
 
 // font-family: 'Cantarell', sans-serif;
 
@@ -48,7 +49,7 @@ body {
 	text-align: left;
 	font-weight: 400;
 	font-family: "Roboto", sans-serif;
-	padding: 7rem 2rem 7rem 2rem;
+	margin: 10rem 2rem 10rem 2rem;
 	letter-spacing: 0.5px;
 
 	&::before,
@@ -57,16 +58,16 @@ body {
 		position: absolute;
 		content: "";
 		height: 4px;
-		width: 26px;
+		width: 24px;
 		background-color: $red;
 		border-bottom-left-radius: 100px;
-		right: 3.8rem;
-		bottom: 6.5rem;
+		right: 1.8rem;
+		bottom: -1px;
 	}
 
 	&::after {
-		width: 17px;
-		right: 1.7rem;
+		width: 15px;
+		right: 0;
 		border-top-right-radius: 100px;
 		border-bottom-left-radius: 0px;
 	}
@@ -150,13 +151,12 @@ body {
 // =======================================================================
 
 .aboutus {
+	// background-attachment: fixed;
 	background-image: url(../img/bgc.jpg);
-	height: 300vh;
+
 	&__box {
 		margin: 0 2rem 0 2rem;
 	}
-
-	
 
 	&__img {
 		position: relative;
@@ -164,7 +164,6 @@ body {
 		border: 1px solid $line-grey;
 
 		&::after {
-			
 			display: block;
 			position: absolute;
 			content: "";
@@ -251,19 +250,181 @@ body {
 		}
 	}
 
-	&__btn{
+	&__btn {
+		@include borderanimation;
 		padding: 1.5rem 3rem;
 		font-size: 1.5rem;
 		background: none;
 		border: 2px solid $line-grey;
 		color: $white;
 		cursor: pointer;
-		transition: border-top-color .2s ease-out, border-right-color .2s ease-out .2s, border-bottom-color .2s ease-out .4s,border-left-color .2s ease-out .6s;
-		
 
-		&:hover{
+		&:hover {
 			border-color: $red;
 			color: white;
+		}
+	}
+}
+
+// =============================================================================
+// Services
+// =============================================================================
+
+.services {
+	// background-attachment: fixed;
+	background-image: url(../img/bgc.jpg);
+
+	&__box {
+		margin: 0 2rem;
+	}
+
+	&__elements {
+		width: 100%;
+		border: 1px solid $line-grey;
+		padding: 2rem;
+
+		@include borderanimation;
+
+		&:hover {
+			border-color: $red;
+			background-color: transparent;
+		}
+		i {
+			font-size: 5rem;
+			color: $white;
+		}
+
+		h4 {
+			margin: 2rem 0;
+			color: white;
+			font-size: 2.5rem;
+			font-weight: 200;
+		}
+		&-one,
+		&-three {
+			background-color: rgba(51, 51, 51, 0.2);
+		}
+		&-two {
+			margin: 3rem 0;
+			background-color: rgba(51, 51, 51, 0.5);
+		}
+	}
+
+	&__box-two {
+		margin-top: 10rem;
+		border: 20px solid $border;
+		background-color: $border;
+	}
+
+	&__item {
+		text-align: center;
+		margin: 6rem 0;
+
+		h3 {
+			margin: 0.8rem 0;
+			color: #fff;
+			font-weight: 200;
+			font-size: 5rem;
+		}
+		span {
+			color: $red;
+			font-weight: 200;
+		}
+
+		p {
+			font-weight: 700;
+		}
+	}
+}
+
+// =============================================================================
+// Projects
+// =============================================================================
+
+.projects {
+	background-image: url(../img/bgc.jpg);
+	height: 300vh;
+
+	&__box {
+		margin: 0 2rem;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		// border: 1px solid red;
+		overflow: hidden;
+		margin-bottom: 2rem;
+		transition: filter 3s;
+
+
+		&:hover img{
+			
+			filter: blur(2px);
+		}
+
+		&:hover &-filtr{
+			opacity: 1;
+		}
+		&:hover &-content{
+			transform: translateY(100px);
+		}
+
+		&-content {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			transition: 1s;
+			
+		}
+		&-filtr {
+			opacity: 0;
+			position: absolute;
+			top: 20px;
+			bottom: 20px;
+			left: 25px;
+			right: 25px;
+			background-color: rgba(29, 30, 32, 0.4);
+			z-index: 5;
+			transition: .6s;
+			cursor: pointer;
+			
+			i{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 2rem;
+				z-index: 1;
+			}
+
+			&-circle{
+				position: absolute;
+				background-color: rgba(0, 0, 0, 0.4);
+				width: 50px;
+				height: 50px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);	
+				clip-path: circle();
+				
+			}
+
+			
+		}
+		h4 {
+			font-size: 2rem;
+		}
+
+		img {
+			// filter: blur(2px);
+			z-index: 0;
+			width: 100%;
+			height: 350px;
+			object-fit: cover;
+			transition: filter .6s;
+			
 		}
 	}
 }

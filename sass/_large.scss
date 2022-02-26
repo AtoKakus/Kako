@@ -1,40 +1,101 @@
-@media(min-width: 992px){
+@media (min-width: 992px) {
+	.hero {
+		&__content {
+			&--text {
+				font-size: 2rem;
+			}
+		}
+	}
+	// =============================================================================
+	// aboutus
+	// =============================================================================
+	.aboutus {
+		&__box {
+			// border: 1px solid $red;
+			display: flex;
+			justify-content: center;
+		}
 
-    .hero{
-      &__content{
-          
-      
+		&__img {
+			// border: 1px solid $red;
+			width: 50%;
+		}
 
-          &--text{
-             font-size: 2rem;
-          }
-        }
+		&__skills {
+			// border: 1px solid blue;
+			width: 60%;
+			margin: 2em;
+		}
+	}
 
-    }
+	// =============================================================================
+	// Services
+	// =============================================================================
+	.services {
+		&__box-one {
+			display: flex;
+			justify-content: center;
+		}
+		&__elements {
+			border: 3px solid $line-grey;
 
-    .aboutus {
+			&-two {
+				margin: 0 2rem;
+				transform: translateY(20%);
+			}
+		}
 
-      &__box {
-        // border: 1px solid $red;
-        display: flex;
-        justify-content: center;
-        
-      }
+		&__box-two {
+			display: flex;
+			justify-content: space-evenly;
+		}
 
+		&__item {
+			width: 100%;
 
-      &__img{
-        // border: 1px solid $red;
-        // width: 50%;
-      }
+			&-two {
+				border-left: 3px solid $line-grey;
+				border-right: 3px solid $line-grey;
+				transition: border-color 0.7s ease-in-out;
+				&:hover {
+					border-color: $red;
+				}
+			}
+		}
+	}
 
-       
-      
+	// =============================================================================
+	// Services
+	// =============================================================================
 
-      &__skills{
-        // border: 1px solid blue;
-        width: 60%;
-        margin: 2em;
-       
-      }
-    }
-  }
+	.projects {
+		&__box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		&__img {
+			&-one {
+				margin-right: 3rem;
+			}
+
+			&-three,
+			&-four {
+				margin-right: 3rem;
+			}
+
+			&-one,
+			&-two {
+				width: 48%;
+			}
+
+			&-three,
+			&-four,
+			&-five {
+				width: 31%;
+			}
+		}
+	}
+}

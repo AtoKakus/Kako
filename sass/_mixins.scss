@@ -1,0 +1,7 @@
+@mixin borderanimation{
+    transition: border-top-color .3s ease-out,
+     border-right-color .3s ease-in-out .2s,
+      border-bottom-color .3s ease-in-out .5s,
+      border-left-color .3s ease-in-out .8s,
+       background-color .5s;
+}
