@@ -20,6 +20,11 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	// border: 1px solid red;
+}
+
+*::selection {
+	background: $red;
 }
 
 html {
@@ -29,9 +34,11 @@ html {
 
 body {
 	font-size: 1.6rem;
-	background-color: #333;
+	// background-color: #333;
+	background-image: url(../img/bgc.jpg);
 	font-family: "Ubuntu", sans-serif;
 	color: #ffffff;
+	min-width: 200px;
 }
 
 .wrapper {
@@ -151,9 +158,6 @@ body {
 // =======================================================================
 
 .aboutus {
-	// background-attachment: fixed;
-	background-image: url(../img/bgc.jpg);
-
 	&__box {
 		margin: 0 2rem 0 2rem;
 	}
@@ -271,9 +275,6 @@ body {
 // =============================================================================
 
 .services {
-	// background-attachment: fixed;
-	background-image: url(../img/bgc.jpg);
-
 	&__box {
 		margin: 0 2rem;
 	}
@@ -342,11 +343,12 @@ body {
 // =============================================================================
 
 .projects {
-	background-image: url(../img/bgc.jpg);
-	height: 300vh;
-
 	&__box {
 		margin: 0 2rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	&__img {
@@ -356,18 +358,21 @@ body {
 		// border: 1px solid red;
 		overflow: hidden;
 		margin-bottom: 2rem;
+		will-change: filter;
 		transition: filter 3s;
 
+		&:last-child {
+			margin-bottom: 0;
+		}
 
-		&:hover img{
-			
+		&:hover img {
 			filter: blur(2px);
 		}
 
-		&:hover &-filtr{
+		&:hover &-filtr {
 			opacity: 1;
 		}
-		&:hover &-content{
+		&:hover &-content {
 			transform: translateY(100px);
 		}
 
@@ -375,8 +380,7 @@ body {
 			position: absolute;
 			bottom: 20px;
 			left: 20px;
-			transition: 1s;
-			
+			transition: 3s;
 		}
 		&-filtr {
 			opacity: 0;
@@ -387,10 +391,10 @@ body {
 			right: 25px;
 			background-color: rgba(29, 30, 32, 0.4);
 			z-index: 5;
-			transition: .6s;
+			transition: 0.6s;
 			cursor: pointer;
-			
-			i{
+
+			i {
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -399,32 +403,350 @@ body {
 				z-index: 1;
 			}
 
-			&-circle{
+			&-circle {
 				position: absolute;
 				background-color: rgba(0, 0, 0, 0.4);
 				width: 50px;
 				height: 50px;
 				top: 50%;
 				left: 50%;
-				transform: translate(-50%, -50%);	
+				transform: translate(-50%, -50%);
 				clip-path: circle();
-				
 			}
-
-			
 		}
 		h4 {
 			font-size: 2rem;
 		}
 
 		img {
-			// filter: blur(2px);
 			z-index: 0;
 			width: 100%;
 			height: 350px;
 			object-fit: cover;
-			transition: filter .6s;
-			
+			will-change: filter;
+			transition: filter 0.6s;
+		}
+	}
+}
+// =============================================================================
+// Resume
+// =============================================================================
+
+.resume {
+	&__boxs {
+		margin: 0 2rem;
+		z-index: 1;
+	}
+
+	&__box {
+		position: relative;
+		margin-bottom: 5rem;
+
+		&::before {
+			position: absolute;
+			content: "";
+			background-image: url(/img/dot.png);
+			width: 90%;
+			height: 30%;
+			right: -20px;
+			bottom: -25px;
+			background-size: 10px;
+			z-index: -10;
+		}
+
+		&-one {
+			border-top: 3px solid $red;
+			background-color: $bgcbox;
+		}
+
+		&-two {
+			border-top: 3px solid $yellow-line;
+			background-color: $bgccoxtwo;
+
+			&::before {
+				will-change: opacity;
+				transition: opacity 0.5s;
+				opacity: 0;
+			}
+			&:hover::before {
+				opacity: 1;
+			}
+		}
+
+		&-three {
+			border-top: 3px solid $blue-line;
+			background-color: $bgcbox;
+
+			&::before {
+				will-change: opacity;
+				transition: opacity 0.5s;
+				opacity: 0;
+			}
+			&:hover::before {
+				opacity: 1;
+			}
+		}
+
+		&-content {
+			margin-bottom: 3rem;
+			h4 {
+				padding: 3rem 2rem 2rem 2rem;
+				font-size: 2rem;
+				color: white;
+			}
+
+			h5 {
+				padding: 0.5rem 2rem;
+				font-size: 1.1em;
+				font-weight: 400;
+				color: #fff;
+			}
+			p {
+				padding: 0 2rem;
+				letter-spacing: 0.5px;
+				line-height: 1.9;
+				font-size: 1em;
+				color: $white;
+				padding-bottom: 1.5rem;
+			}
+		}
+		&-content-two,
+		&-content-four,
+		&-content-six {
+			@include contentLine;
+
+			p:last-child {
+				padding-bottom: 3rem;
+			}
+		}
+
+		&-content-two {
+			&::before {
+				background-color: $red;
+			}
+		}
+
+		&-content-four {
+			&::before {
+				background-color: $yellow-line;
+			}
+		}
+
+		&-content-six {
+			&::before {
+				background-color: $blue-line;
+			}
+		}
+	}
+}
+
+// =============================================================================
+// Team
+
+// =============================================================================
+
+.team {
+	margin: 0 2rem;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// overflow: hidden;
+		&-img {
+			position: relative;
+			overflow: hidden;
+		}
+
+		&-media {
+			bottom: -70px;
+			position: absolute;
+			transition: 0.5s;
+			width: 100%;
+		}
+
+		&-center {
+			display: flex;
+			justify-content: space-evenly;
+		}
+		&-icon {
+			cursor: pointer;
+			height: 40px;
+			width: 40px;
+			background-color: $bgcbox;
+			border-radius: 3px;
+			line-height: 40px;
+			text-align: center;
+			will-change: background;
+			transition: background 0.5s;
+
+			&:hover {
+				background-color: $red;
+			}
+		}
+		///////////////////////////////////////////////////////////////
+		&-card {
+			margin: 0 2rem;
+			margin-bottom: 4rem;
+			max-width: 690px;
+
+			width: 100%;
+			background-color: $bgcbox;
+
+			&-one {
+				&:hover .team__box-media {
+					bottom: 30px;
+				}
+
+				&:hover img {
+					filter: blur(2px);
+				}
+			}
+			&-two {
+				background-color: $bgccoxtwo;
+				// background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+
+				&:hover .team__box-media {
+					bottom: 30px;
+				}
+
+				&:hover img {
+					filter: blur(2px);
+				}
+			}
+
+			&-three {
+				&:hover .team__box-media {
+					bottom: 30px;
+				}
+
+				&:hover img {
+					filter: blur(2px);
+				}
+			}
+
+			img {
+				width: 100%;
+				object-fit: cover;
+				will-change: ofilter;
+				transition: filter 0.3s;
+				overflow: hidden;
+			}
+		}
+
+		&-content {
+			position: relative;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100px;
+
+			h3 {
+				font-size: 2rem;
+				margin-left: 2rem;
+				line-height: 2.6rem;
+			}
+
+			p {
+				margin-left: 2rem;
+				color: $white;
+				line-height: 2.6rem;
+			}
+		}
+	}
+}
+
+// =============================================================================
+// blogs
+
+// =============================================================================
+
+.blogs {
+	height: 200vh;
+
+	&__content {
+		&-box {
+			margin: 0 2rem;
+		}
+
+		&-card {
+			position: relative;
+			background-color: $bgcbox;
+			width: 100%;
+			height: 50%;
+			margin-bottom: 5rem;
+
+			// @include animationLine;
+		}
+
+		&-card-one {
+			&::after {
+				background-color: $red;
+			}
+			@include animationLine;
+		}
+
+		&-card-two {
+			&::after {
+				background-color: #ffdb66;
+			}
+			@include animationLine;
+		}
+
+		&-card-three {
+			&::after {
+				background-color: $blue-line;
+			}
+			@include animationLine;
+		}
+
+		&-img {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			height: 50%;
+
+			&::before {
+				position: absolute;
+				top: 0p;
+				left: -75%;
+				content: "";
+				width: 50%;
+				height: 110%;
+				background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+				top: -20px;
+				transform: skewX(-25deg);
+			}
+
+			&:hover::before {
+				animation: windows .75s;
+			}
+
+			img {
+				width: 100%;
+				height: 235px;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+
+		&-text {
+			padding: 2rem;
+			height: 50%;
+
+			h3 {
+				color: #fff;
+				margin-bottom: 1rem;
+				letter-spacing: 0.5px;
+			}
+
+			p {
+				letter-spacing: 0.5px;
+				line-height: 1.9;
+				color: $white;
+				// padding: 2rem;
+			}
 		}
 	}
 }

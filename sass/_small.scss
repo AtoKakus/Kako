@@ -1,0 +1,48 @@
+@media (max-width: 408px){
+    .text-title-small{
+    position: relative;
+	display: inline;
+	font-size: 3.5rem;
+	color: $white;
+	text-transform: capitalize;
+	text-align: left;
+	font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	margin: 10rem 2rem 10rem 2rem;
+	letter-spacing: 0.5px;
+	
+
+    &::before,
+	&::after {
+		display: inline-block;
+		position: absolute;
+		content: "";
+		height: 4px;
+		width: 24px;
+		background-color: $red;
+		border-bottom-left-radius: 100px;
+		right: 29px;
+		bottom: -40px;
+       
+	}
+    &::after {
+		width: 15px;
+		right: 11px;
+		border-top-right-radius: 100px;
+		border-bottom-left-radius: 0px;
+	}
+    }
+
+    .team{
+        &__box{
+            &-card-one{
+                margin-top: 10rem;
+            }
+
+        }
+    }
+
+    .resume__box-content-six{
+        margin-bottom: 10rem;
+    }
+}

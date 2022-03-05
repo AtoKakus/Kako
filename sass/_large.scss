@@ -60,16 +60,12 @@
 				&:hover {
 					border-color: $red;
 				}
-
-				
 			}
-
-			
 		}
 	}
 
 	// =============================================================================
-	// Services
+	// Projects
 	// =============================================================================
 
 	.projects {
@@ -102,4 +98,88 @@
 			}
 		}
 	}
+	// =============================================================================
+	// resume
+	// =============================================================================
+	.resume {
+		&__boxs {
+			display: flex;
+			
+			justify-content: center;
+			align-items: center;
+		}
+		&__box {
+			margin: 0 2rem;
+			&-content-two,
+			&-content-four,
+			&-content-six {
+				p:last-child {
+					padding-bottom: 1rem;
+				}
+			}
+		}
+		&__box-contener{
+			transform: translateY(70px);
+		}
+		&__box-two {
+			
+
+			&::before {
+				position: absolute;
+				content: "";
+				background-image: url(/img/dot.png);
+				z-index: -10;
+			}
+		}
+	}
+	// =============================================================================
+	// Team
+	// =============================================================================
+	.team{
+		&__box{
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+			align-items: center;
+			&-card{
+				&-two{
+					transform: translateY(40px);
+					margin-left: 3rem;
+					margin-right: 3rem;
+				}
+			}
+		}
+	
+		
+	}
+
+		// =============================================================================
+	// Blogs
+	// =============================================================================
+
+	.blogs{
+		&__content{
+			&-box{
+				display: flex;
+				justify-content: center;
+
+				
+			}
+
+			&-card{
+				margin: 0 2rem;
+
+				&-two{
+					transform: translateY(40px);
+				}
+			}
+
+			&-img{
+				img{
+					height: 240px;
+				}
+			}
+		}
+	}
 }
+
