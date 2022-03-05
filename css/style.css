@@ -366,10 +366,6 @@ body {
   transition: filter 3s, -webkit-filter 3s;
 }
 
-.projects__img:last-child {
-  margin-bottom: 0;
-}
-
 .projects__img:hover img {
   -webkit-filter: blur(2px);
           filter: blur(2px);
@@ -957,7 +953,7 @@ body {
     width: 48%;
   }
   .projects__img-three, .projects__img-four, .projects__img-five {
-    width: 31%;
+    width: 30%;
   }
   .resume__boxs {
     display: -webkit-box;
