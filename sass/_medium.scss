@@ -15,5 +15,12 @@
 		}
 	}
 
-	
+	.contact{
+		&__form{
+			&-box-name{
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
 }

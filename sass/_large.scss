@@ -104,7 +104,7 @@
 	.resume {
 		&__boxs {
 			display: flex;
-			
+
 			justify-content: center;
 			align-items: center;
 		}
@@ -118,12 +118,10 @@
 				}
 			}
 		}
-		&__box-contener{
+		&__box-contener {
 			transform: translateY(70px);
 		}
 		&__box-two {
-			
-
 			&::before {
 				position: absolute;
 				content: "";
@@ -135,51 +133,104 @@
 	// =============================================================================
 	// Team
 	// =============================================================================
-	.team{
-		&__box{
+	.team {
+		&__box {
 			display: flex;
 			justify-content: center;
 			flex-direction: row;
 			align-items: center;
-			&-card{
-				&-two{
+			&-card {
+				&-two {
 					transform: translateY(40px);
 					margin-left: 3rem;
 					margin-right: 3rem;
 				}
 			}
 		}
-	
-		
 	}
 
-		// =============================================================================
+	// =============================================================================
 	// Blogs
 	// =============================================================================
 
-	.blogs{
-		&__content{
-			&-box{
+	.blogs {
+		&__content {
+			&-box {
 				display: flex;
 				justify-content: center;
-
-				
 			}
 
-			&-card{
-				margin: 0 2rem;
-
-				&-two{
+			&-card {
+				&-two {
 					transform: translateY(40px);
+					margin: 0 3rem;
 				}
 			}
 
-			&-img{
-				img{
+			&-img {
+				img {
 					height: 240px;
 				}
 			}
 		}
 	}
-}
+	// =============================================================================
+	// contact
+	// =============================================================================
 
+	.contact {
+		&__flex {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 2rem;
+		}
+
+		&-info {
+			width: 35%;
+		}
+
+		&__form-box-full {
+			margin: 0 5rem;
+		}
+		&__form-box {
+			width: 30%;
+		}
+		input {
+			width: 100%;
+		}
+
+		&__media {
+			margin-top: 8rem;
+			justify-content: center;
+			&-icon {
+				margin: 1rem;
+			}
+		}
+	}
+
+	.footer {
+		padding: 2rem 0;
+
+		&-box {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&-newslater {
+			width: 60%;
+			text-align: right;
+
+			p {
+				display: inline-block;
+				margin-right: 2rem;
+			}
+		}
+		&-mail {
+			margin-right: auto;
+			display: inline-block;
+			width: 40%;
+		}
+	}
+}
