@@ -5,6 +5,11 @@
 				font-size: 2rem;
 			}
 		}
+
+		&__menu{
+			// width: 60%;
+			border-right: 3px solid $red;
+		}
 	}
 	// =============================================================================
 	// aboutus
@@ -228,9 +233,13 @@
 			}
 		}
 		&-mail {
-			margin-right: auto;
+			margin-right: 2rem;
 			display: inline-block;
 			width: 40%;
+		}
+
+		&-text{
+			margin-left: 2rem;
 		}
 	}
 }

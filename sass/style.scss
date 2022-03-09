@@ -23,8 +23,6 @@
 	// border: 1px solid red
 }
 
-
-
 *::selection {
 	background: $red;
 }
@@ -36,24 +34,26 @@ html {
 
 body {
 	font-size: 1.6rem;
-	background-color: $bgcbody;
 	// background-image: url(../img/bgc.jpg);
+	background-color: $bgcbody;
 	background-image: url(../img/bg-paterns.png);
 	font-family: "Ubuntu", sans-serif;
 	color: #ffffff;
-	min-width: 200px;
 }
 
-textarea:focus, button:focus, input:focus{
+textarea:focus,
+button:focus,
+input:focus {
 	outline: none;
-	border:1px solid $red !important;
-}			
-
+	border: 1px solid $red !important;
+}
 
 .wrapper {
+	min-width: 200px;
 	margin: 0 auto;
 	max-width: 1110px;
 	width: 100%;
+	
 }
 
 .text-title {
@@ -87,8 +87,6 @@ textarea:focus, button:focus, input:focus{
 		border-top-right-radius: 100px;
 		border-bottom-left-radius: 0px;
 	}
-	
-	
 }
 // =====================================================================
 // HERO
@@ -105,6 +103,70 @@ textarea:focus, button:focus, input:focus{
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
+
+	&__menu {
+		position: fixed;
+		&-btn{
+			position: absolute;
+			right: 10px;
+		}
+		display: none;
+
+		width: 100%;
+		height: 100%;
+		background-color: $bgccoxtwo;
+		background-image: url(../img/bg-paterns.png);
+		z-index: 500;
+		&-box {
+			
+			background-image: url(../img/bg-paterns.png);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+		&-list {
+			// text-align: center;
+			background-color: transparent;
+			span {
+				font-size: 1.5rem;
+				color: $red;
+				display: inline-block;
+			}
+
+			a {
+				position: relative;
+				display: block;
+				text-decoration: none;
+				color: $white;
+				padding: 2.6rem;
+				font-size: 3rem;
+			}
+
+			a:before {
+				position: absolute;
+				content: "";
+				display: inline-block;
+				bottom: 17px;
+				left: 10px;
+				height: 0px;
+				width: 2px;
+				background-color: $red;
+				will-change: height;
+				transition: height 0.5s;
+			}
+			a:hover::before {
+				height: 60%;
+			}
+		}
+
+		&-contact {
+			
+			
+			display: none;
+		}
+	}
 
 	&__nav {
 		position: absolute;
@@ -131,7 +193,7 @@ textarea:focus, button:focus, input:focus{
 			background: none;
 			border: none;
 			cursor: pointer;
-			margin: 2rem;
+			padding: 2rem;
 
 			i {
 				font-size: 3rem;
@@ -289,10 +351,9 @@ textarea:focus, button:focus, input:focus{
 .services {
 	&__box {
 		margin: 0 2rem;
-		
 	}
 
-	&__box-two{
+	&__box-two {
 		box-shadow: 0px 9px 31px 6px rgba(0, 0, 0, 0.4);
 	}
 
@@ -449,8 +510,7 @@ textarea:focus, button:focus, input:focus{
 .resume {
 	&__boxs {
 		margin: 0 2rem;
-		z-index: 1;
-		
+		z-index: 10;
 	}
 
 	&__box {
@@ -776,10 +836,10 @@ textarea:focus, button:focus, input:focus{
 		text-align: center;
 		line-height: 1.9;
 		will-change: border-color;
-		transition: border-color .5s;
+		transition: border-color 0.5s;
 		background-color: $bgcbox;
 
-		&:hover{
+		&:hover {
 			border-color: $red;
 		}
 
@@ -827,8 +887,6 @@ textarea:focus, button:focus, input:focus{
 
 			resize: none;
 		}
-
-		
 
 		button {
 			position: relative;
@@ -881,7 +939,7 @@ textarea:focus, button:focus, input:focus{
 		margin: 3rem 0;
 		display: flex;
 		justify-content: space-evenly;
-		
+
 		&-icon {
 			width: 40px;
 			height: 40px;
@@ -906,32 +964,31 @@ textarea:focus, button:focus, input:focus{
 // =============================================================================
 
 .footer {
+	
 	background-color: $bgccoxtwo;
 	border-top: 1px solid $line-grey;
 	padding-bottom: 3rem;
 	will-change: border-top-color;
-	transition: border-top-color .6s;
-	&:hover{
+	transition: border-top-color 0.6s;
+	&:hover {
 		border-top-color: $red;
 	}
-	
-	&-text{
-		font-family: 'Saira', sans-serif;
+
+	&-text {
+		font-family: "Saira", sans-serif;
 		text-align: center;
 		font-size: 1.7rem;
 		color: $white;
 		line-height: 3.5;
-		
 	}
 
-	&-mail{
+	&-mail {
 		position: relative;
 		margin: 0 auto;
 		width: 80%;
 
-		input{
-			
-			font-family: 'Saira', sans-serif;
+		input {
+			font-family: "Saira", sans-serif;
 			height: 50px;
 			width: 100%;
 			background-color: transparent;
@@ -942,35 +999,28 @@ textarea:focus, button:focus, input:focus{
 			border: 1px solid $line-grey;
 		}
 
-		
-
-		button{
+		button {
 			position: absolute;
 			padding: 15px;
 			top: 50%;
 			right: 0px;
-			transform: translateY(-50%);	
+			transform: translateY(-50%);
 			background-color: transparent;
 			border: none;
 			cursor: pointer;
-		
 		}
 
-		i{
+		i {
 			color: $white;
 			font-size: 1.5rem;
 			will-change: color;
 			transition: color 0.5s;
 		}
 
-		i:hover{
+		i:hover {
 			color: $red;
 		}
-		
 	}
-	
-
-	
 }
 
 @import "./small";
