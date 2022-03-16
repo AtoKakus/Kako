@@ -16,6 +16,50 @@
   }
 }
 
+@-webkit-keyframes menu {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes menu {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes menuback {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes menuback {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -114,17 +158,42 @@ input:focus {
 
 .hero__menu {
   position: fixed;
-  display: none;
   width: 100%;
   height: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
   background-color: #222222;
   background-image: url(../img/bg-paterns.png);
   z-index: 500;
 }
 
+.hero__menu--active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-animation: menu 0.75s;
+          animation: menu 0.75s;
+}
+
+.hero__menu--back {
+  -webkit-animation: menuback 0.75s;
+          animation: menuback 0.75s;
+}
+
 .hero__menu-btn {
   position: absolute;
   right: 10px;
+}
+
+.hero__menu-btn button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2rem;
+}
+
+.hero__menu-btn button i {
+  font-size: 3rem;
+  color: #fff;
 }
 
 .hero__menu-box {
@@ -213,14 +282,14 @@ input:focus {
   height: 3.6rem;
 }
 
-.hero__nav--btn {
+.hero__nav--btn2 {
   background: none;
   border: none;
   cursor: pointer;
   padding: 2rem;
 }
 
-.hero__nav--btn i {
+.hero__nav--btn2 i {
   font-size: 3rem;
   color: #fff;
 }
@@ -1248,6 +1317,7 @@ input:focus {
     font-size: 2rem;
   }
   .hero__menu {
+    width: 60%;
     border-right: 3px solid #ee2b3f;
   }
   .aboutus__box {
